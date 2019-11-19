@@ -8,19 +8,22 @@ public class Facultad {
 	@Id
 	private String id;
 
-	private String name;
-	private String bloque;
-	private boolean active;
+	private String nombre;
+	private String director;
+	private String telefono;
+	private String fundacion;
 
 	public Facultad() {
 	}
 
-	public Facultad(String name, String bloque) {
-		this.name = name;
-		this.bloque = bloque;
+	public Facultad(String nombre , String director , String telefono , String fundacion) {
+		this.nombre = nombre;
+		this.director = director;
+		this.telefono = telefono;
+		this.fundacion = fundacion;
 	}
 
-
+	
 	public String getId() {
 		return id;
 	}
@@ -29,32 +32,40 @@ public class Facultad {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public String getBloque() {
-		return bloque;
+	public String getDirector() {
+		return director;
 	}
 
-	public void setBloque(String bloque) {
-		this.bloque = bloque;
+	public void setDirector(String director) {
+		this.director = director;
 	}
 
-	public boolean isActive() {
-		return active;
+	public String getTelefono() {
+		return telefono;
 	}
 
-	public void setActive(boolean active) {
-		this.active = active;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getFundacion() {
+		return fundacion;
+	}
+
+	public void setFundacion(String fundacion) {
+		this.fundacion = fundacion;
 	}
 
 	@Override
 	public String toString() {
-		return "Facultad [id=" + id + ", name=" + name + ", bloque=" + bloque + ", active=" + active + "]";
+		return "Facultad [id=" + id + ", nombre=" + nombre + ", director=" + director + ", telefono=" + telefono + ", fundacion=" + fundacion + " ]";
 	}
 }

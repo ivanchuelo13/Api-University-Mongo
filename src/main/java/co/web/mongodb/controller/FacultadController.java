@@ -30,7 +30,7 @@ public class FacultadController {
 
 	@GetMapping("/facultades")
 	public List<Facultad> getAllCustomers() {
-		System.out.println("Get all Customers...");
+		System.out.println("Get all Facultades...");
 
 		List<Facultad> facultades = new ArrayList<>();
 		repository.findAll().forEach(facultades::add);
@@ -41,7 +41,7 @@ public class FacultadController {
 	@PostMapping("/facultades/create")
 	public Facultad postFacultad(@RequestBody Facultad facultad) {
 
-		Facultad _facultad = repository.save(new Facultad(facultad.getName(), facultad.getBloque()));
+		Facultad _facultad = repository.save(new Facultad(facultad.getNombre(), facultad.getDirector(), facultad.getTelefono(), facultad.getFundacion()));
 		return _facultad;
 	}
 
@@ -68,7 +68,7 @@ public class FacultadController {
 
 		List<Facultad> customers = repository.findByAge(age);
 		return customers;
-	}*/
+	}
 
 	@PutMapping("/facultades/{id}")
 	public ResponseEntity<Facultad> updateCustomer(@PathVariable("id") String id, @RequestBody Facultad customer) {
@@ -85,5 +85,5 @@ public class FacultadController {
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-	}
+	}*/
 }

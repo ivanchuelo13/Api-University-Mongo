@@ -69,21 +69,22 @@ public class FacultadController {
 		List<Facultad> customers = repository.findByAge(age);
 		return customers;
 	}
-
+*/
 	@PutMapping("/facultades/{id}")
-	public ResponseEntity<Facultad> updateCustomer(@PathVariable("id") String id, @RequestBody Facultad customer) {
+	public ResponseEntity<Facultad> updateFacultad(@PathVariable("id") String id, @RequestBody Facultad facultad) {
 		System.out.println("Update Customer with ID = " + id + "...");
 
 		Optional<Facultad> facultadData = repository.findById(id);
 
 		if (facultadData.isPresent()) {
 			Facultad _facultad = facultadData.get();
-			_facultad.setName(customer.getName());
-			_facultad.setBloque(customer.getBloque());
-			_facultad.setActive(customer.isActive());
+			_facultad.setNombre(facultad.getNombre());
+			_facultad.setDirector(facultad.getDirector());
+			_facultad.setTelefono(facultad.getTelefono());
+			_facultad.setFundacion(facultad.getFundacion());
 			return new ResponseEntity<>(repository.save(_facultad), HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-	}*/
+	}
 }

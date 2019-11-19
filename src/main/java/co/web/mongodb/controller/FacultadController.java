@@ -63,13 +63,14 @@ public class FacultadController {
 		return new ResponseEntity<>("All customers have been deleted!", HttpStatus.OK);
 	}
 
-/*	@GetMapping("customers/age/{age}")
-	public List<Facultad> findByAge(@PathVariable int age) {
-
-		List<Facultad> customers = repository.findByAge(age);
-		return customers;
+	@GetMapping("/facultades/{id}")
+	public Optional<Facultad> findByAge(@PathVariable("id") String id) {
+		Optional<Facultad> facultad = repository.findById(id);
+		return facultad;
 	}
-*/
+
+	
+	
 	@PutMapping("/facultades/{id}")
 	public ResponseEntity<Facultad> updateFacultad(@PathVariable("id") String id, @RequestBody Facultad facultad) {
 		System.out.println("Update Customer with ID = " + id + "...");

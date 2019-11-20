@@ -65,6 +65,7 @@ public class FacultadController {
 
 	@GetMapping("/facultades/{id}")
 	public Optional<Facultad> findByAge(@PathVariable("id") String id) {
+		System.out.println("Get Faucltad por ID OP...");
 		Optional<Facultad> facultad = repository.findById(id);
 		return facultad;
 	}
